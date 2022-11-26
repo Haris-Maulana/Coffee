@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+// Dependencies
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+// Component
+import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
+import Branches from "./pages/Branches.jsx";
+import Jobs from "./pages/Jobs.jsx";
+import Menu from "./pages/Menu.jsx";
+
+// Style
+import './App.scss'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <BrowserRouter>
+    <Routes>
+        <Route path='/' index element={<Home/>}/>
+        <Route path='/menu' element={<Menu/>}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/branches" element={<Branches/>}/>
+        <Route path="/jobs" element={<Jobs/>}/>
+    </Routes>
+    </BrowserRouter>
+    </>
   );
 }
 
