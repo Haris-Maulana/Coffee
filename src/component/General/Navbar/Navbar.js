@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
 import Menu from "../../../assets/interface/Menu.png";
+import WikiCoffeeUrl from "../../../assets/interface/Wiki Coffee.jpg";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,41 +15,39 @@ function Navbar() {
     }
   };
 
-  const openMenu = useRef(null)
-  const root = document.querySelector(':root')
+  const openMenu = useRef(null);
+  const root = document.querySelector(":root");
 
-  useEffect(
-    () => {
-      if (menuOpen === true) {
-        console.log("Works");
-        root.style.setProperty('--isMenu-open', 'flex')
-        root.style.setProperty('--menu-natural-black', 'invert(100%)')
-        openMenu.current.style.animation = 'rotate 300ms ease-in-out forwards'
-      } else {
-        console.log("Works but closed");
-        root.style.setProperty('--isMenu-open', 'none')
-        openMenu.current.style.animation = 'reverse-rotate 300ms ease-in-out forwards'
-        root.style.setProperty('--menu-natural-black', 'invert(0%)')
-      }
-    },
-    [onClickMenu]
-  );
-
-  useEffect(()=>{
-    if (openMenu.current === null){
-      setMenuOpen(false);
-      root.style.setProperty('--isMenu-open', 'none')
+  useEffect(() => {
+    if (menuOpen === true) {
+      console.log("Works");
+      root.style.setProperty("--isMenu-open", "flex");
+      root.style.setProperty("--menu-natural-black", "invert(100%)");
+      openMenu.current.style.animation = "rotate 300ms ease-in-out forwards";
+    } else {
+      console.log("Works but closed");
+      root.style.setProperty("--isMenu-open", "none");
+      openMenu.current.style.animation =
+        "reverse-rotate 300ms ease-in-out forwards";
+      root.style.setProperty("--menu-natural-black", "invert(0%)");
     }
-  },[openMenu.current])
+  }, [onClickMenu]);
+
+  useEffect(() => {
+    if (openMenu.current === null) {
+      setMenuOpen(false);
+      root.style.setProperty("--isMenu-open", "none");
+    }
+  }, [openMenu.current]);
 
   return (
     <>
       <nav className="default-nav">
         {/* Left Side Nav =================== */}
-
         <div className="lt-nav">
+          <img src={WikiCoffeeUrl} alt="WikiCoffee" />
           <Link to="/">
-            <span>W</span>IKI COFFEE
+            <span>W</span>IKI KOFFIE
           </Link>
         </div>
 
@@ -81,7 +80,13 @@ function Navbar() {
         {/* Right Side Nav =================== */}
 
         <div className="rt-nav">
-          <img src={Menu} alt="Menu" className="menu" onClick={onClickMenu} ref={openMenu} />
+          <img
+            src={Menu}
+            alt="Menu"
+            className="menu"
+            onClick={onClickMenu}
+            ref={openMenu}
+          />
         </div>
 
         {/* Right Side Nav Ends =================== */}
