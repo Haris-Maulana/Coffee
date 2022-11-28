@@ -4,17 +4,18 @@ footer {
   background-color: #1b1b1b;
   flex-direction: column;
   color: white;
-  justify-content: center;
   align-items: center;
-  padding: 5vh;
+  justify-content: space-between;
+  height: 50vh;
 
   .footer-menu {
+    margin-top: 2rem;
     display: flex;
-    width: 70%;
+    width: 90%;
     justify-content: space-around;
   
     .left-footer {
-      width: 50%;
+      width: 30%;
 
       li {
         margin-bottom: 2vh;
@@ -32,9 +33,10 @@ footer {
     }
 
     .right-footer {
-      width: 50%;
+      width: 70%;
       display: flex;
       flex-direction: column;
+      margin-top: 2rem;
 
       .title-footer {
         margin-bottom: 4rem;
@@ -42,7 +44,7 @@ footer {
 
       .content-footer {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         font-size: 3rem;
       
         a {

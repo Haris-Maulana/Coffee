@@ -32,7 +32,7 @@ function Footer() {
             </ul>
           </div>
           <div className="right-footer">
-            <div className="title-footer">You Can Find Us at</div>
+            <div className="title-footer">You Can Find Us at :  </div>
             <div className="content-footer">
               <a href="https://www.instagram.com/wikikoffie/">
                 <AiOutlineInstagram />

@@ -79,15 +79,15 @@ button {
       a {
         cursor: pointer;
         margin: 0 1rem;
-        padding: 0.5rem 1.25rem;
-        border-radius: 25px;
+        padding: 0.5rem 2rem;
+        border-radius: 10px;
         font-weight: 600;
         transition: 150ms ease-in-out;
       }
 
       a:hover {
         color: white;
-        background-color: #5e3719;
+        background-color: #e18b49;
       }
 
       a:active {
@@ -107,7 +107,7 @@ button {
       height: 6vmin;
       cursor: pointer;
 
-      z-index: 100;
+      z-index: 10000;
       filter: var(--menu-natural-black);
     }
 
@@ -141,7 +141,7 @@ button {
     left: 50%;
     transform: translate(-50%,-50%);
     color: white;
-    z-index: 10;
+    z-index: 1000;
     animation: slide-in 300ms ease-in-out;
 
     ul {
@@ -161,16 +161,25 @@ button {
     }
     
     a {
-      padding: .5rem 1.25rem;
+      width: 50%;
+      padding: 1rem;
       background-color: #C78F5C;
       border-radius: 15px;
       font-size: 5vw;
       cursor: pointer;
+      animation: text-menu ease-in-out 600ms;
     }
   }
 
   @keyframes text-menu {
-    
+    0% {
+      opacity: 0;
+      transform: translateY(-20%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @keyframes slide-in {
