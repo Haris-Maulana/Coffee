@@ -2,14 +2,14 @@ import React from "react";
 
 import "./Homepage.scss";
 
-import Headerbgc from "../../assets/image/headerbgc.jpg";
+import Headerbgc from "../../assets/image/headerbgc.webp";
 import wikiKoffie from "../../assets/image/wikikoffie.jpeg";
 
 function Home() {
   return (
     <div className="homepage">
       <header>
-        <img src={Headerbgc} alt="" />
+        <img src={Headerbgc} alt="" loading="lazy"/>
         <h1>
           <em>
             Taste of Life

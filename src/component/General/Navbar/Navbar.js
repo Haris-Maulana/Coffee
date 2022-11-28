@@ -20,12 +20,10 @@ function Navbar() {
 
   useEffect(() => {
     if (menuOpen === true) {
-      console.log("Works");
       root.style.setProperty("--isMenu-open", "flex");
       root.style.setProperty("--menu-natural-black", "invert(100%)");
       openMenu.current.style.animation = "rotate 300ms ease-in-out forwards";
     } else {
-      console.log("Works but closed");
       root.style.setProperty("--isMenu-open", "none");
       openMenu.current.style.animation =
         "reverse-rotate 300ms ease-in-out forwards";
